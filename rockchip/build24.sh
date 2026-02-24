@@ -37,6 +37,7 @@ else
   ls -lh /home/build/immortalwrt/extra-packages/*.run
   # 解压并拷贝ipk到packages目录
   sh shell/prepare-packages.sh
+echo "src/gz local file:///home/build/immortalwrt/packages" >> repositories.conf
   ls -lah /home/build/immortalwrt/packages/
   # 添加架构优先级信息
 fi
