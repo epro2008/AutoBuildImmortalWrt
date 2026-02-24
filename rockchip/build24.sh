@@ -45,6 +45,8 @@ fi
 
 # 输出调试信息
 echo "$(date '+%Y-%m-%d %H:%M:%S') - 开始构建固件..."
+echo "src/gz passwall_packages https://dl.openwrt.ai/releases/24.10/packages/aarch64_generic/passwall" >> repositories.conf
+echo "src/gz passwall_luci https://dl.openwrt.ai/releases/24.10/packages/aarch64_generic/luci" >> repositories.conf
 echo "查看repositories.conf信息——————"
 cat repositories.conf
 # 定义所需安装的包列表 下列插件你都可以自行删减
@@ -58,7 +60,7 @@ PACKAGES="$PACKAGES luci-theme-argon"
 # PACKAGES="$PACKAGES luci-app-argon-config"
 # PACKAGES="$PACKAGES luci-i18n-argon-config-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
-# PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
+PACKAGES="$PACKAGES luci-app-passwall"
 # PACKAGES="$PACKAGES luci-app-openclash"
 # PACKAGES="$PACKAGES luci-i18n-homeproxy-zh-cn"
 # 判断是否需要编译 Docker 插件
